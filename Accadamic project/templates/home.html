@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<!-- Header with Aurora Logo -->
+    <header>
+        <img src="/static/logo.png" alt="aurora Logo" class="header-logo">
+    </header>
+    <div class="container">
+        <h2>Welcome, {{ user.username }}!</h2>
+        <p>Your ID Number: {{ user.idnumber }}</p>
+        <p>Your Username: {{ user.username }}</p>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Attendance</h3>
+                <a href="{{ url_for('attendance') }}">View Attendance Details</a>
+            </div>
+            <div class="card">
+                <h3>Results</h3>
+                <a href="{{ url_for('results') }}">View Exam Results</a>
+            </div>
+            <div class="card">
+                <h3>Academic</h3>
+                <a href="{{ url_for('academic') }}">View Academic Information</a>
+            </div>
+            <div class="card">
+                <h3>Documents</h3>
+                <a href="{{ url_for('documents') }}">Access Important Documents</a>
+            </div>
+        </div>
+
+        <a href="/">Logout</a>
+    </div>
+</body>
+</html>
